@@ -1,7 +1,7 @@
 pipeline {
   environment {
-    registry = "tyitzhak/spring-petclinic-hub"
-    registryCredential = 'docker-hub'
+    registry = "saragoza68/spring-petclinic-hub"
+    registryCredential = 'dockerHub'
     dockerImage = ''
   }
   agent any
@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/talitz/spring-petclinic-jenkins-pipeline.git'
+        git 'https://github.com/mklmfane/spring-petclinic-jenkins-pipeline.git'
       }
     }
     stage('Compile') {
