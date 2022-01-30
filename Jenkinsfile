@@ -36,6 +36,14 @@ pipeline {
         }
       }
     }
+    
+    stage('Analyze with Anchore plugin') {
+      steps {
+         writeFile file: 'anchore_images', text: registry
+         anchore name: 'anchore_images'
+      }
+    }
+    
     stage('Deploy Image') {
       steps{
          script {
